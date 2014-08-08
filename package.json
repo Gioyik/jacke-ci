@@ -1,25 +1,19 @@
 {
-  "name": "jacke",
+  "name": "jacke-ci",
   "version": "1.0.0",
-  "description": "A minimalistic Continuous Integration server",
-  "author": "Ryan Kee <me@ryankee.com> (http://ryankee.com)",
+  "description": "A simple CI server",
+  "author": "ZydiaLabs (http://zydialabs.com)",
   "preferGlobal": true,
   "keywords": [
     "coffeescript",
     "continuous integration",
+    "ci",
     "test",
     "coffee"
   ],
-  "bin": {
-    "jacke": "./bin/jacke"
-  },
   "directories": {
     "bin": "./bin",
     "lib": "./lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ryankee/jacke.git"
   },
   "dependencies": {
     "colors": "0.6.x",
@@ -41,5 +35,12 @@
     "grunt-contrib-stylus": "^0.16.0",
     "grunt-contrib-copy": "^0.5.0",
     "grunt-jasmine-bundle": "^0.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryankee/jacke-ci.git"
+  },
+  "bin": {
+    "jacke-ci": "./bin/jacke-ci"
   }
 }

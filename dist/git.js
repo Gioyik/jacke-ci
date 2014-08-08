@@ -13,10 +13,10 @@
     user: '',
     pass: '',
     config: {
-      runner: 'jacke.runner',
-      branch: 'jacke.branch',
-      user: 'jacke.user',
-      pass: 'jacke.pass'
+      runner: 'jacke-ci.runner',
+      branch: 'jacke-ci.branch',
+      user: 'jacke-ci.user',
+      pass: 'jacke-ci.pass'
     },
     init: function(target, callback) {
       var path;

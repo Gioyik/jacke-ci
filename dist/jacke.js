@@ -1,17 +1,17 @@
 (function() {
   var argv, colors, git, optimist, startServer, usage, version;
 
-  process.title = 'Jacke';
+  process.title = 'Jacke-CI';
 
   version = '0.0.3';
 
   colors = require('colors');
 
-  usage = 'Usage: jacke [-hpv] path_to_git_repo';
+  usage = 'Usage: jacke-ci [-hpv] path_to_git_repo';
 
   optimist = require('optimist');
 
-  argv = optimist.usage('Usage: jacke [-hpv] path_to_git_repo'.green).options('h', {
+  argv = optimist.usage('Usage: jacke-ci [-hpv] path_to_git_repo'.green).options('h', {
     alias: 'host',
     describe: "The hostname or ip of the host to bind to",
     "default": '0.0.0.0'
@@ -36,7 +36,7 @@
   }
 
   if (argv.v) {
-    console.log(("Jacke v" + version).green);
+    console.log(("Jacke-CI v" + version).green);
     process.exit(1);
   }
 
@@ -51,7 +51,7 @@
     global.currentNamespace = argv.d;
     server = require('./server');
     server.listen(argv.p, argv.h);
-    return console.log("Jacke listening on port %d with host %s in directory %s".green, argv.p, argv.h, argv.d);
+    return console.log("Jacke-CI listening on port %d with host %s in directory %s".green, argv.p, argv.h, argv.d);
   };
 
   git = require('./git');

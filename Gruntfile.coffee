@@ -26,7 +26,7 @@ module.exports = (grunt) ->
 
       ui:
         files:
-          'dist/public/jacke.js': ['src/views/js/jacke.coffee']
+          'dist/public/jacke-ci.js': ['src/views/js/jacke-ci.coffee']
 
     stylus:
       compile:

@@ -2,18 +2,18 @@ doctype 5
 html ->
     head ->
         meta charset: 'utf-8'
-        title "#{if @title then @title+' - ' else ''}Jacke"
+        title "#{if @title then @title+' - ' else ''}Jacke-CI"
         meta(name: 'description', content: @desc) if @desc?
         link rel: 'stylesheet', href: "#{@baseUrl()}stylesheets/app.css"
         script src: "#{@baseUrl()}js/jquery-1.6.2.min.js"
         script src: "#{@baseUrl()}js/coffeekup.js"
-        script src: "#{@baseUrl()}jacke.js"
+        script src: "#{@baseUrl()}jacke-ci.js"
         script ->
           "window.baseUrl = '#{@baseUrl()}';"
     body ->
         header ->
             hgroup ->
-                h1 'JACKE'
+                h1 'JACKE-CI'
                 h2 '.project', -> @project
                 nav ->
                     form method: 'post', action: @baseUrl(), ->

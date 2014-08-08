@@ -13,10 +13,10 @@ git = module.exports =
     user: ''
     pass: ''
     config:
-        runner: 'jacke.runner'
-        branch: 'jacke.branch'
-        user: 'jacke.user'
-        pass: 'jacke.pass'
+        runner: 'jacke-ci.runner'
+        branch: 'jacke-ci.branch'
+        user: 'jacke-ci.user'
+        pass: 'jacke-ci.pass'
 
     # init at target directory
     init: (target, callback) ->
@@ -31,7 +31,7 @@ git = module.exports =
             target = process.cwd()+'/'+target
         process.chdir target
 
-        # set up git paths for jacke's post-build executions
+        # set up git paths for jacke-ci's post-build executions
         git.target = path.normalize target+'/.git/'
         git.failure = path.normalize target+'/.git/hooks/build-failed'
         git.success = path.normalize target+'/.git/hooks/build-worked'
@@ -90,7 +90,7 @@ getBranch = ->
             git.branch = 'master' if git.branch is ''
             gitContinue()
 
-# get the jacke runner file
+# get the jacke-ci runner file
 getRunner = ->
     exec 'git config --get ' + git.config.runner, (error, stdout, stderr)=>
         if error?
@@ -101,7 +101,7 @@ getRunner = ->
             git.runner = 'none' if git.runner is ''
             gitContinue()
 
-# notify the user of any issue prior to continuing the jacke operation
+# notify the user of any issue prior to continuing the jacke-ci operation
 gitContinue = ->
     if git.branch is 'none'
         git.branch = 'master'

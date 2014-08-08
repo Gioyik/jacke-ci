@@ -5,7 +5,7 @@ dbName = path.basename(process.cwd()).replace(/\./, "-")
 dbHost = process.env.MONGODB_HOST || 'localhost'
 dbPort = process.env.MONGODB_PORT || mongo.Connection.DEFAULT_PORT
 
-db = new mongo.Db "jacke_#{ dbName }", new mongo.Server(dbHost, dbPort, {auto_reconnect: true}), {}
+db = new mongo.Db "jacke-ci_#{ dbName }", new mongo.Server(dbHost, dbPort, {auto_reconnect: true}), {}
 db.open (err) ->
     if err
       console.log 'There was an error creating a connection with the Mongo database. Please check that MongoDB is properly installed and running.'.red

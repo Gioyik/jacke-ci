@@ -1,13 +1,13 @@
-process.title = 'Jacke'
+process.title = 'Jacke-CI'
 version = '0.0.3'
 
 # cli colors
 colors = require 'colors'
 
-usage = 'Usage: jacke [-hpv] path_to_git_repo'
+usage = 'Usage: jacke-ci [-hpv] path_to_git_repo'
 optimist = require 'optimist'
 {argv} = optimist
-        .usage('Usage: jacke [-hpv] path_to_git_repo'.green)
+        .usage('Usage: jacke-ci [-hpv] path_to_git_repo'.green)
         .options('h', {
             alias: 'host',
             describe: "The hostname or ip of the host to bind to",
@@ -38,7 +38,7 @@ if argv.help
 
 # list the version
 if argv.v
-    console.log "Jacke v#{version}".green
+    console.log "Jacke-CI v#{version}".green
     process.exit 1
 
 # if there isn't a repo
@@ -53,7 +53,7 @@ startServer = ->
     global.currentNamespace = argv.d
     server = require './server'
     server.listen argv.p, argv.h
-    console.log "Jacke listening on port %d with host %s in directory %s".green,
+    console.log "Jacke-CI listening on port %d with host %s in directory %s".green,
         argv.p, argv.h, argv.d
 
 # check the path and start the git request

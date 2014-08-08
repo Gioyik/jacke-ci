@@ -1,7 +1,7 @@
-# Jacke
-Jacke is a minimalistic Continuous Integration server.
+# Jacke-CI
+Jacke-CI is a minimalistic Continuous Integration server.
 
-![jacke](http://dl.dropbox.com/u/1152970/jacke_screenshot_hi.png)
+![jacke-ci](http://dl.dropbox.com/u/1152970/jacke-ci_screenshot_hi.png)
 
 _Note: I don't have a lot of time to maintain, so I'm looking for folks who'd like to contribute. Post an issue if you'd like to toss some time towards new features, issues, or pull requests._
 
@@ -9,15 +9,15 @@ _Note: I don't have a lot of time to maintain, so I'm looking for folks who'd li
 
 > Note: This project requires a MongoDB instance
 
-    npm install -g jacke
+    npm install -g jacke-ci
     git clone git://github.com/you/yourrepo.git
     cd yourrepo
-    git config --add jacke.runner "coffee test/unit.coffee"
-    jacke .
+    git config --add jacke-ci.runner "coffee test/unit.coffee"
+    jacke-ci .
     open http://localhost:4567
 
 ## Usage
-    Usage: jacke [-hpv] path_to_git_repo
+    Usage: jacke-ci [-hpv] path_to_git_repo
 
     Options:
       -h, --host     The hostname or ip of the host to bind to  [default: "0.0.0.0"]
@@ -26,17 +26,17 @@ _Note: I don't have a lot of time to maintain, so I'm looking for folks who'd li
       -v, --version  Show version
 
 ## Setting the test runner
-    git config --add jacke.runner "coffee test/unit.coffee"
+    git config --add jacke-ci.runner "coffee test/unit.coffee"
 
 ## Setting the branch
-    git config --add jacke.branch deploy
+    git config --add jacke-ci.branch deploy
 
 ## Adding HTTP Basic authentication
-    git config --add jacke.user username
-    git config --add jacke.pass password
+    git config --add jacke-ci.user username
+    git config --add jacke-ci.pass password
 
 ## Post build
-After building Jacke will run `.git/hooks/build-failed` or `.git/hooks/build-worked` depending on test outcome. Like all git hooks, they're just shell scripts so put whatever you want in there.
+After building Jacke-CI will run `.git/hooks/build-failed` or `.git/hooks/build-worked` depending on test outcome. Like all git hooks, they're just shell scripts so put whatever you want in there.
 
 
-Jacke is **heavily** inspired by [CI Joe](https://github.com/defunkt/cijoe)
+Jacke-CI is **heavily** inspired by [CI Joe](https://github.com/defunkt/cijoe)
