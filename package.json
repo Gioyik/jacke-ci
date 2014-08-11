@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ryankee/jacke-ci.git"
+    "url": "git://github.com/ZydiaLabs/jacke-ci.git"
   },
   "bin": {
     "jacke-ci": "./bin/jacke-ci"

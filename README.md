@@ -1,17 +1,13 @@
 # Jacke-CI
-Jacke-CI is a minimalistic Continuous Integration server.
-
-![jacke-ci](http://dl.dropbox.com/u/1152970/jacke-ci_screenshot_hi.png)
-
-_Note: I don't have a lot of time to maintain, so I'm looking for folks who'd like to contribute. Post an issue if you'd like to toss some time towards new features, issues, or pull requests._
+Jacke-CI is a simple CI server
 
 ## Quickstart
 
 > Note: This project requires a MongoDB instance
 
     npm install -g jacke-ci
-    git clone git://github.com/you/yourrepo.git
-    cd yourrepo
+    git clone git://github.com/user/repo.git
+    cd repo
     git config --add jacke-ci.runner "coffee test/unit.coffee"
     jacke-ci .
     open http://localhost:4567
