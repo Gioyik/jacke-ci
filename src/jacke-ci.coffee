@@ -1,5 +1,5 @@
 process.title = 'Jacke-CI'
-version = '0.0.3'
+version = '1.0.1'
 
 # cli colors
 colors = require 'colors'
