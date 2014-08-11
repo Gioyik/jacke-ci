@@ -1,5 +1,5 @@
 (function() {
-  var ObjectID, db, dbName, getJobs, jobs, mongo, path;
+  var ObjectID, db, dbHost, dbName, dbPort, getJobs, jobs, mongo, path;
 
   mongo = require('mongodb');
 
@@ -7,13 +7,18 @@
 
   dbName = path.basename(process.cwd()).replace(/\./, "-");
 
-  db = new mongo.Db("jacke-ci_" + dbName, new mongo.Server('localhost', mongo.Connection.DEFAULT_PORT, {
+  dbHost = process.env.MONGODB_HOST || 'localhost';
+
+  dbPort = process.env.MONGODB_PORT || mongo.Connection.DEFAULT_PORT;
+
+  db = new mongo.Db("jacke-ci_" + dbName, new mongo.Server(dbHost, dbPort, {
     auto_reconnect: true
   }), {});
 
-  db.open(function(error) {
-    if (error) {
+  db.open(function(err) {
+    if (err) {
       console.log('There was an error creating a connection with the Mongo database. Please check that MongoDB is properly installed and running.'.red);
+      console.log(err);
       return process.exit(1);
     }
   });
